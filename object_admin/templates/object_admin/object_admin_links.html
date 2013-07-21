@@ -1,0 +1,7 @@
+{% if object %}
+    <a href="{{ object.get_admin_change_url }}">Edit</a> |
+    <a href="{{ object.get_admin_delete_url }}">Delete</a> |
+    <a href="{{ object.get_admin_history_url }}">History</a> |
+    <a href="{{ object.get_admin_add_url }}">Add another {{ object.get_verbose_name }}</a> |
+    <a href="{{ object.get_admin_changelist_url }}">Manage {{ object.get_verbose_name_plural }}</a>
+{% endif %}
