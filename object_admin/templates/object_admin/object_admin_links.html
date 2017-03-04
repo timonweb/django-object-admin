@@ -1,7 +1,16 @@
-{% if object %}
-    <a href="{{ object.get_admin_change_url }}">Edit</a> |
-    <a href="{{ object.get_admin_delete_url }}">Delete</a> |
-    <a href="{{ object.get_admin_history_url }}">History</a> |
-    <a href="{{ object.get_admin_add_url }}">Add another {{ object.get_verbose_name }}</a> |
-    <a href="{{ object.get_admin_changelist_url }}">Manage {{ object.get_verbose_name_plural }}</a>
-{% endif %}
+{% load admin_urls %}
+<div class="django-object-admin">
+  <ul class="django-object-admin__nav">
+    {% if opts %}
+      <li class="django-object-admin__nav-item"><a href="{% url opts|admin_urlname:'change' object.pk %}">Edit</a></li>
+      <li class="django-object-admin__nav-item"><a href="{% url opts|admin_urlname:'delete' object.pk %}">Delete</a></li>
+      <li class="django-object-admin__nav-item"><a href="{% url opts|admin_urlname:'history' object.pk %}">History</a></li>
+      <li class="django-object-admin__nav-item"><a href="{% url opts|admin_urlname:'add' %}">Add another {{ opts.verbose_name }}</a></li>
+      <li class="django-object-admin__nav-item"><a href="{% url opts|admin_urlname:'changelist' %}">Manage {{ opts.verbose_name_plural }}</a></li>
+    {% endif %}
+    <li class="django-object-admin__nav-item"><a href="{% url 'admin:index' %}">Go to admin</a></li>
+  </ul>
+  <a href="#" class="django-object-admin__trigger">
+    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 252"><title>django-object-admin</title><g id="Page-1"><g id="Group"><circle id="Oval" cx="126" cy="126" r="126" style="fill:#d8d8d8"/><g id="D" style="isolation:isolate"><g style="isolation:isolate"><path d="M72.7,58.8l4.6-.2c12.8-.8,25.8-1.4,35.6-1.4,29.8,0,50,5.2,65.2,16.6,15.4,11.6,23.8,30.6,23.8,54.2,0,24.8-9.2,45-26,57.6-15.6,11.4-34.4,16.2-64.8,16.2-12,0-26.4-.4-38.4-1.2V58.8Zm33.4,113.6c7.2,0.2,10.4.6,13.8,0.6,30.6,0,47-15.2,47-44,0-12.6-3.8-24-10.4-31-7.8-8.2-19.2-12-36.2-12-4.2,0-7.6.2-14.2,0.4v86Z" style="fill:#394d54"/></g></g></g></g></svg>
+  </a>
+</div>

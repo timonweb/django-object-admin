@@ -1,0 +1,109 @@
+.django-object-admin {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 1000;
+}
+
+.django-object-admin__trigger {
+  display: block;
+  width: 50px;
+  cursor: pointer;
+}
+
+.django-object-admin__nav {
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 110%;
+  min-width: 150px;
+  overflow: hidden;
+  padding-bottom: 8px;
+  visibility: hidden;
+}
+
+.django-object-admin__nav::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 18px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  border-color: #222 transparent transparent transparent;
+  transition-delay: 0.1s;
+}
+
+.django-object-admin__nav-item {
+  -webkit-transform: translateY(1em);
+  -ms-transform: translateY(1em);
+  transform: translateY(1em);
+  background-color: #222;
+  opacity: 0;
+  overflow: hidden;
+  transition-duration: .150s;
+  text-decoration: none !important;
+  border-bottom: 1px solid #333;
+}
+
+.django-object-admin__nav-item:last-child {
+  border: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.django-object-admin__nav-item a {
+  font-size: 16px;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+  display: block;
+  color: #eee;
+  padding: 5px 10px;
+}
+
+.django-object-admin__nav-item a:hover {
+  background-color: #333;
+  text-decoration: none;
+}
+
+.django-object-admin__nav--active {
+  visibility: visible;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item {
+  -webkit-transform: translateY(0) !important;
+  -ms-transform: translateY(0) !important;
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item:nth-last-child(1) {
+  transition-delay: 0.05s;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item:nth-last-child(2) {
+  transition-delay: 0.1s;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item:nth-last-child(3) {
+  transition-delay: 0.15s;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item:nth-last-child(4) {
+  transition-delay: 0.2s;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item:nth-last-child(5) {
+  transition-delay: 0.25s;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item:nth-last-child(6) {
+  transition-delay: 0.3s;
+}
+
+.django-object-admin__nav--active .django-object-admin__nav-item:nth-last-child(7) {
+  transition-delay: 0.35s;
+}
